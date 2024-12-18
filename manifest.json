@@ -1,0 +1,11 @@
+{
+  "name": "ChemistryExpanded",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/Milky-way-Galaxy/ChemistryExpanded",
+  "description": "Adds additional chemical processes, such as water electrolysis, sulfuric acid conversion, and boronene synthesis.",
+  "dependencies": [
+      "xiaoye97-BepInEx-5.4.17",
+      "xiaoye97-LDBTool-2.0.6",
+      "CommonAPI-CommonAPI-1.6.3"
+  ]
+}
