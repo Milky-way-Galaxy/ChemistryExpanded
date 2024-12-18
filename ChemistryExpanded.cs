@@ -23,7 +23,7 @@ public class ChemistryExpanded : BaseUnityPlugin
             Name = "Catalyst",
             Description = "A catalyst used in the electrolysis process.",
             GridIndex = 1801,
-            IconPath = "BepInEx/plugins/ChemistryExpanded/icon.png",
+            WaterElectrolysisPath = "BepInEx/plugins/ChemistryExpanded/WaterElectrolysis.png",
             // Additional item properties...
         };
 
@@ -39,7 +39,7 @@ public class ChemistryExpanded : BaseUnityPlugin
             ID = newRecipeId,
             Name = "Catalytic Electrolysis",
             GridIndex = 1802,
-            IconPath = "BepInEx/plugins/ChemistryExpanded/icon.png",
+            WaterElectrolysisPath = "BepInEx/plugins/ChemistryExpanded/WaterElectrolysis.png",
             Description = "Produces oxygen and hydrogen using a catalyst.",
             Items = new int[] { LDB.items.Select(1000).ID, newItemId }, // Example: Water and Catalyst
             ItemCounts = new int[] { 1, 1 },
