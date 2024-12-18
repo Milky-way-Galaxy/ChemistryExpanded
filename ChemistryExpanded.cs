@@ -2,54 +2,46 @@
 using LDBTool;
 using UnityEngine;
 
-[BepInPlugin("com.example.chemistryexpanded", "Chemistry Expanded", "1.0.0")]
-[BepInDependency("me.xiaoye97.LDBTool", BepInDependency.DependencyFlags.HardDependency)]
-public class ChemistryExpanded : BaseUnityPlugin
+namespace ChemistryExpanded
 {
-    void Start()
+    [BepInPlugin("com.milkyway.ChemistryExpanded", "Chemistry Expanded", "1.0.0")]
+    public class WaterElectrolysis : BaseUnityPlugin
     {
-        LDBTool.PreAddDataAction += AddCatalyticElectrolysisRecipe;
-    }
-
-    void AddCatalyticElectrolysisRecipe()
-    {
-        // Define a unique ID for the new item
-        int newItemId = 9500; // Ensure this ID is unique and does not conflict with other mods
-
-        // Create the new item
-        var newItem = new ItemProto
+        // The recipe for Water Electrolysis (Water -> Hydrogen)
+        void Start()
         {
-            ID = newItemId,
-            Name = "Catalyst",
-            Description = "A catalyst used in the electrolysis process.",
-            GridIndex = 1801,
-            WaterElectrolysisPath = "BepInEx/plugins/ChemistryExpanded/WaterElectrolysis.png",
-            // Additional item properties...
-        };
+            // Create the recipe for Water Electrolysis
+            RecipeProto waterElectrolysisRecipe = new RecipeProto
+            {
+                ID = 1001, // Choose a unique ID for the recipe
+                Name = "Water Electrolysis",
+                Icon = "WaterElectrolysis.png", // Use the image file for the recipe icon
+                TimeCost = 1.0f, // Set processing time (1 second for simplicity)
+                InputItems = new[]
+                {
+                    new ItemProto
+                    {
+                        ID = 1, // Water ID (this might need to be adjusted)
+                        Amount = 1
+                    }
+                },
+                OutputItems = new[]
+                {
+                    new ItemProto
+                    {
+                        ID = 2, // Hydrogen ID (adjust this accordingly)
+                        Amount = 1
+                    }
+                }
+            };
 
-        // Add the new item to the game's item database
-        LDB.items.dataArray = LDB.items.dataArray.AddToArray(newItem);
+            // Register the recipe
+            LDBTool.RegisterRecipe(waterElectrolysisRecipe);
+            
+            // Log that the mod has started
+            Logger.LogInfo("ChemistryExpanded Mod Loaded - Water Electrolysis Added!");
+        }
 
-        // Define a unique ID for the new recipe
-        int newRecipeId = 10500; // Ensure this ID is unique and does not conflict with other mods
-
-        // Create the new recipe
-        var newRecipe = new RecipeProto
-        {
-            ID = newRecipeId,
-            Name = "Catalytic Electrolysis",
-            GridIndex = 1802,
-            WaterElectrolysisPath = "BepInEx/plugins/ChemistryExpanded/WaterElectrolysis.png",
-            Description = "Produces oxygen and hydrogen using a catalyst.",
-            Items = new int[] { LDB.items.Select(1000).ID, newItemId }, // Example: Water and Catalyst
-            ItemCounts = new int[] { 1, 1 },
-            Results = new int[] { LDB.items.Select(1100).ID, LDB.items.Select(1200).ID }, // Example: Oxygen and Hydrogen
-            ResultCounts = new int[] { 1, 2 },
-            TimeSpend = 1f,
-            // Additional recipe properties...
-        };
-
-        // Add the new recipe to the game's recipe database
-        LDB.recipes.dataArray = LDB.recipes.dataArray.AddToArray(newRecipe);
+        // Other methods can go here if you want to add more chemical processes
     }
 }

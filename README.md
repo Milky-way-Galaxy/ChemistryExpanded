@@ -1,39 +1,31 @@
 # ChemistryExpanded
 
-**ChemistryExpanded** is a mod for **Dyson Sphere Program** that adds several new chemical processes, including water electrolysis for hydrogen production, sulfuric acid decomposition, and more.
+ChemistryExpanded is a mod for Dyson Sphere Program that adds new chemical processes to enhance your gameplay. It introduces various reactions, such as the electrolysis of water to obtain hydrogen.
 
-## Features
+### Water Electrolysis
 
-- **Water Electrolysis**: Convert water into hydrogen.
-  - Formula: 1 Water -> 1 Hydrogen (1 second)
-  - Hydrogen heat value adjusted to 440 kJ for balance.
+- **Recipe:** 1 Water -> 1 Hydrogen (1 second)
+- **Unlocks after:** Basic Chemicals Technology in the Chemical Plant
 
-- **Sulfuric Acid to Sulfur and Oxygen**: Decompose sulfuric acid into sulfur and oxygen.
-  - Process: 1 Sulfuric Acid -> 1 Sulfur + 1 Oxygen (time and energy calculation to be added)
+### Features:
+- Electrolyze water to obtain hydrogen. This helps in hydrogen production.
+- Hydrogen's heat value is adjusted for balance in the game.
 
-- **Boronene**: Added as a new chemical product. (Further details coming soon)
+### Installation
 
-## Installation
+1. Install [BepInEx](https://github.com/BepInEx/BepInEx) if you haven't already.
+2. Install [CommonAPI](https://github.com/xiaoye97/CommonAPI) and [LDBTool](https://github.com/xiaoye97/LDBTool).
+3. Place the `WaterElectrolysis.dll` file into your `Dyson Sphere Program/BepInEx/plugins/` directory.
 
-1. Install BepInEx framework.
-2. Install **CommonAPI** and **LDBTool**.
-3. Place `ChemistryExpanded.dll` into the `Dyson Sphere Program/BepInEx/plugins/` folder.
+### Mod Conflicts
 
-## Mod Configuration
+- RecipeProto.ID: 1001 (Ensure no other mods are using this ID).
+- GridIndex: 1810 (This should be unique for your mod to avoid conflicts).
 
-- You can adjust the mod's balancing via the config file. To disable the hydrogen heat value adjustment, set `"BalanceAdjustment"` to `false` in the configuration file.
+### Changelog
 
-## Compatibility
+- v1.0.0: Initial release with Water Electrolysis recipe.
 
-- This mod may conflict with other mods that use the following RecipeProto.ID or GridIndex:
-  - **RecipeProto.ID**: 443
-  - **GridIndex**: 1810
+### License
 
-## Changelog
-
-### v1.0.0
-- Initial release with water electrolysis and hydrogen production.
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+This mod is distributed under the [MIT License](https://opensource.org/licenses/MIT).
