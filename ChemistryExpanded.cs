@@ -1,52 +1,55 @@
 ﻿using BepInEx;
-using CommonAPI;
-using System;
+using LDBTool;
+using UnityEngine;
 
-namespace ChemistryExpanded
+[BepInPlugin("com.example.chemistryexpanded", "Chemistry Expanded", "1.0.0")]
+[BepInDependency("me.xiaoye97.LDBTool", BepInDependency.DependencyFlags.HardDependency)]
+public class ChemistryExpanded : BaseUnityPlugin
 {
-    [BepInPlugin("com.milkyway.chemistryexpanded", "Chemistry Expanded", "1.0.0")]
-    public class ChemistryExpandedPlugin : BaseUnityPlugin
+    void Start()
     {
-        public void Awake()
+        LDBTool.PreAddDataAction += AddCatalyticElectrolysisRecipe;
+    }
+
+    void AddCatalyticElectrolysisRecipe()
+    {
+        // Define a unique ID for the new item
+        int newItemId = 9500; // Ensure this ID is unique and does not conflict with other mods
+
+        // Create the new item
+        var newItem = new ItemProto
         {
-            Logger.LogInfo("Chemistry Expanded Mod Loaded");
+            ID = newItemId,
+            Name = "Catalyst",
+            Description = "A catalyst used in the electrolysis process.",
+            GridIndex = 1801,
+            IconPath = "BepInEx/plugins/ChemistryExpanded/icon.png",
+            // Additional item properties...
+        };
 
-            // Add the electrolysis recipe when the mod is loaded
-            AddElectrolysisRecipe();
-        }
+        // Add the new item to the game's item database
+        LDB.items.dataArray = LDB.items.dataArray.AddToArray(newItem);
 
-        private void AddElectrolysisRecipe()
+        // Define a unique ID for the new recipe
+        int newRecipeId = 10500; // Ensure this ID is unique and does not conflict with other mods
+
+        // Create the new recipe
+        var newRecipe = new RecipeProto
         {
-            // Creating a new recipe for Water Electrolysis
-            RecipeProto electrolysisRecipe = new RecipeProto
-            {
-                Name = "Water Electrolysis",  // Recipe name
-                Id = 1001,  // Recipe ID (you can choose a free ID in your game)
-                Time = 1f,  // 1 second for the electrolysis reaction
-                Icon = IconManager.GetIcon("icon"),  // Set the recipe icon (from the file named "icon.png")
-                Description = "Electrolyze water to obtain hydrogen.", // Description
-                // Inputs and outputs of the recipe
-                Ingredients = new RecipeIngredient[]
-                {
-                    new RecipeIngredient { ItemId = 1000, Amount = 10 }  // 1 water (ID of water in the game)
-                },
-                Products = new RecipeProduct[]
-                {
-                    new RecipeProduct { ItemId = 1001, Amount = 10 }  // 1 hydrogen (ID of hydrogen in the game)
-                }
-            };
+            ID = newRecipeId,
+            Name = "Catalytic Electrolysis",
+            GridIndex = 1802,
+            IconPath = "BepInEx/plugins/ChemistryExpanded/icon.png",
+            Description = "Produces oxygen and hydrogen using a catalyst.",
+            Items = new int[] { LDB.items.Select(1000).ID, newItemId }, // Example: Water and Catalyst
+            ItemCounts = new int[] { 1, 1 },
+            Results = new int[] { LDB.items.Select(1100).ID, LDB.items.Select(1200).ID }, // Example: Oxygen and Hydrogen
+            ResultCounts = new int[] { 1, 2 },
+            TimeSpend = 1f,
+            // Additional recipe properties...
+        };
 
-            // Add the recipe to the game
-            LDBTool.AddRecipe(electrolysisRecipe);
-
-            // Here, you would typically set the energy value of hydrogen
-            // For simplicity, we'll set a static energy value for now.
-            float hydrogenEnergyValue = 440000f;  // Energy value in Joules (for example, 440kJ = 440,000 J)
-
-            // Calculate energy produced (for now just for simplicity as fixed value)
-            // The energy calculation can be placed in a more dynamic way depending on the game mechanics.
-            float producedEnergy = hydrogenEnergyValue;  // Energy produced per hydrogen (in Joules)
-            Logger.LogInfo($"Energy produced per hydrogen: {producedEnergy} Joules");
-        }
+        // Add the new recipe to the game's recipe database
+        LDB.recipes.dataArray = LDB.recipes.dataArray.AddToArray(newRecipe);
     }
 }
