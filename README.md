@@ -1,6 +1,6 @@
 # ChemistryExpanded  
 
-**Version:** 1.3.0  
+**Version:** 0.1.0 
 **Author:** Milky-way Galaxy  
 **Description:** Expand your chemistry horizons! This mod introduces water electrolysis and paves the way for more chemistry-focused features in the future.  
 
