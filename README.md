@@ -7,7 +7,7 @@ New Chemical Processes:
 New Items and Materials:
 -Oxygen
 
-Installation
+*Installation*
 Manual
 1.Download the latest release of ChemistryExpanded.
 2.Extract the contents into the game’s Mods folder.
