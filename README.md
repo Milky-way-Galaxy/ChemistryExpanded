@@ -1,93 +1,82 @@
-# ChemistryExpanded
+# ChemistryExpanded Mod
 
-One Paragraph of the project description
 
-Initially appeared on
-[gist](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2). But the page cannot open anymore so that is why I have moved it here.
+## Introduction
+ChemistryExpanded is a transformative mod for Dyson Sphere Program that deepens your industrial and scientific endeavors. By introducing advanced chemical processes, new resources, and innovative production chains, this mod empowers players to enhance their interstellar manufacturing networks with precision and efficiency.
 
-## Getting Started
+## Key Features
 
-These instructions will give you a copy of the project up and running on
-your local machine for development and testing purposes. See deployment
-for notes on deploying the project on a live system.
+### Chemical Processes
+- Water Electrolysis
+Decompose water into hydrogen and oxygen, enabling advanced energy and material applications.
 
-### Prerequisites
+## New Resources and Items
 
-Requirements for the software and other tools to build, test and push 
-- [Example 1](https://www.example.com)
-- [Example 2](https://www.example.com)
+Oxygen: Essential for various advanced recipes.
 
-### Installing
+Hydrogen: A key component for energy and fusion systems.
 
-A step by step series of examples that tell you how to get a development
-environment running
+Additional intermediate products to streamline your manufacturing processes.
 
-Say what the step will be
+Expanded Gameplay Integration
 
-    Give the example
+Seamlessly integrates with existing production systems.
 
-And repeat
+Unlock new production technologies to optimize your Dyson Sphere construction.
 
-    until finished
+Installation
 
-End with an example of getting some data out of the system or using it
-for a little demo
+Using r2modman
 
-## Running the tests
+Install r2modman.
 
-Explain how to run the automated tests for this system
+Open r2modman and select Dyson Sphere Program as your game.
 
-### Sample Tests
+Search for "ChemistryExpanded" in the mod manager and click Install.
 
-Explain what these tests test and why
+Launch the game via r2modman to enable the mod automatically.
 
-    Give an example
+Manual Installation
 
-### Style test
+Download the latest release of ChemistryExpanded from [mod repository link].
 
-Checks if the best practices and the right coding style has been used.
+Extract the downloaded files to the game’s BepInEx/plugins folder.
 
-    Give an example
+Default Path: Documents/Dyson Sphere Program/BepInEx/plugins/
 
-## Deployment
+Launch the game and ensure the mod is active.
 
-Add additional notes to deploy this on a live system
+Usage Guide
 
-## Built With
+Access new recipes directly in the replicator or appropriate production buildings.
 
-  - [Contributor Covenant](https://www.contributor-covenant.org/) - Used
-    for the Code of Conduct
-  - [Creative Commons](https://creativecommons.org/) - Used to choose
-    the license
+Utilize water sources for the Water Electrolysis process, generating essential resources like hydrogen and oxygen.
 
-## Contributing
+Incorporate new items into your logistics and production networks to optimize your interstellar infrastructure.
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
-of conduct, and the process for submitting pull requests to us.
+Troubleshooting and Known Issues
 
-## Versioning
+Ensure all dependencies, including BepInEx and CommonAPI, are up-to-date.
 
-We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
-available, see the [tags on this
-repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
+If resource icons (e.g., oxygen) do not display correctly, verify that the corresponding sprite files are located in the appropriate directory.
 
-## Authors
+Report compatibility issues or bugs via the mod’s issue tracker.
 
-  - **Billie Thompson** - *Provided README Template* -
-    [PurpleBooth](https://github.com/PurpleBooth)
+Contribution
 
-See also the list of
-[contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
-who participated in this project.
+We welcome contributions from the community! To get involved:
 
-## License
+Fork the repository [repository link].
 
-This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
-Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
-details
+Make your improvements or additions.
 
-## Acknowledgments
+Submit a pull request for review.
 
-  - Hat tip to anyone whose code is used
-  - Inspiration
-  - etc
+Feedback and suggestions can also be submitted via the repository’s issues page.
+
+License
+
+ChemistryExpanded is licensed under the MIT License. For details, see the LICENSE file included in the repository.
+
+"Enhance your Dyson Sphere Program journey with ChemistryExpanded. Revolutionize your supply chains, refine your resources, and take your galactic ambitions to new heights."
+
